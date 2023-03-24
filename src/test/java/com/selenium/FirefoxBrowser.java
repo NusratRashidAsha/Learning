@@ -2,12 +2,9 @@ package com.selenium;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.time.Duration;
-
-public class BrowserOpening {
+public class FirefoxBrowser {
 
     public static void main(String[] args) {
         WebDriverManager.firefoxdriver().setup(); // setup web driver manager
@@ -18,21 +15,10 @@ public class BrowserOpening {
 
         System.out.println(Driver.getTitle());
         System.out.println(Driver.getCurrentUrl());
-        Driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
 
         Driver.quit();
 
-        WebDriverManager.chromedriver().setup();
-        WebDriver driverChrome=new ChromeDriver();
-        driverChrome.get("https://www.youtube.com/");
-        driverChrome.manage().window().maximize();
-
-
-        System.out.println(driverChrome.getTitle());
-        System.out.println(driverChrome.getCurrentUrl());
-
-        driverChrome.quit();
 
     }
 }
